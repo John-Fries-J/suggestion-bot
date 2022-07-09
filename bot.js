@@ -37,7 +37,7 @@ module.exports = class botClient extends Client {
     this.config = require('./config.json');
   }
   
-  validate(options) {
+  /*validate(options) {
     if (typeof options !== 'object') throw new TypeError('Options should be a type of Object.');
 
     if (!token) throw new Error('You must pass the token for the client.');
@@ -48,7 +48,7 @@ module.exports = class botClient extends Client {
     this.prefix = options.prefix;
 
   }
-
+*/
   async start(token = this.token) {
     this.utils.loadCommands()
     this.utils.loadEvents()

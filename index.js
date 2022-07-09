@@ -1,4 +1,3 @@
-
 const botclient = require("./bot");
 const config = require("./config.json");
 
@@ -14,9 +13,7 @@ bot.emoji = require('./emojis.js');
 //start the bot
 bot.start();
 
-const express = require('express')
-const app = express()
-const port = 3000
+
 
 
 

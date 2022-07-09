@@ -97,7 +97,7 @@ module.exports = class extends Event {
         .setTitle(`${message.client.emoji.fail} Missing Bot Permissions`)
         .setDescription(`Command Name: **${command.name}**\nRequired Permission: **${missingPermissions.map(p => `${p}`).join(' - ')}**`)
         .setTimestamp()
-        .setFooter('https://pogy.xyz')
+        .setFooter('Problems')
         .setColor(message.guild.me.displayHexColor);
       return message.channel.send(embed).catch(()=>{})
           }

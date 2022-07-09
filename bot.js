@@ -1,8 +1,6 @@
 const { Client, Collection } = require("discord.js");
 const Util = require('./structures/Util');
-const config = require('./config.json');
-const env = require('./.env');
-const token  = env.TOKEN
+//const config = require('./config.json');
 
 module.exports = class botClient extends Client {
 	constructor(options = {}, sentry) {
@@ -57,7 +55,7 @@ module.exports = class botClient extends Client {
 
 
     
-    this.login(env.TOKEN);
+    this.login(process.env.TOKEN);
 
     console.log('LOADED BOT!');
   }

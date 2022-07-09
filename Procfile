@@ -1,1 +1,1 @@
-worker: node index.js
+disc: node index.js

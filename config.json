@@ -1,7 +1,7 @@
 {
-  "prefix": "",
-  "main_token": "",
-  "developers": [""],
-  "bot_name":"",
-  "suggestion_channel_id":""
+  "prefix": "!",
+  "main_token": "env.TOKEN",
+  "developers": ["630070645874622494"],
+  "bot_name":"Shark Suggestions",
+  "suggestion_channel_id":"727975112355217501"
 }

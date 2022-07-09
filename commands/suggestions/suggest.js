@@ -31,9 +31,9 @@ module.exports = class extends Command {
       };
 
       const embed = new Discord.MessageEmbed()
-      .setTitle('New Suggestion')
-      .setDescription(`\`\`\`\n${suggestion}\`\`\``)
-      .setFooter(`Suggested by ${message.author.tag}`)
+      .setThumbnail(message.author.avatarURL())
+      .setDescription(`**Submitter**\n ${message.author.tag} \n\n**Suggestion**\n ${suggestion}`)
+      .setFooter(`Suggested by ${message.author.id}`)
       .setTimestamp()
     
       channel.send(embed)

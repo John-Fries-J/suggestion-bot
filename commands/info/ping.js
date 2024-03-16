@@ -11,17 +11,11 @@ module.exports = class extends Command {
         cooldown: 3,
       });
     }
-
     async run(message) {
-
-
         const msg = await message.channel.send('Pinging...');
         const latency = msg.createdTimestamp - message.createdTimestamp;
-  
         msg.edit(` \`\`\`js
   Time taken: ${latency}ms
   Discord API: ${Math.round(this.client.ws.ping)}ms\`\`\``);
-
-
       }
 };

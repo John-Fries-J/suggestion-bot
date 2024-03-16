@@ -28,7 +28,7 @@ module.exports = class botClient extends Client {
         ],
       },
     });
-    
+
     this.validate(options);
     this.partials = ['MESSAGE', 'CHANNEL', 'REACTION', 'GUILD_MEMBER', 'USER'],
     this.commands = new Collection();
@@ -37,28 +37,18 @@ module.exports = class botClient extends Client {
     this.utils = new Util(this);
     this.config = require('./config.json');
   }
-  
   validate(options) {
     if (typeof options !== 'object') throw new TypeError('Options should be a type of Object.');
-
     if (!token) throw new Error('You must pass the token for the client.');
     this.token = token;
-
     if(!options.prefix) throw new Error('You must pass a prefix for the client.');
     if(typeof options.prefix !== 'string') throw new TypeError('Prefix should be a type of String.');
     this.prefix = options.prefix;
-
   }
-
   async start(token = this.token) {
     this.utils.loadCommands()
     this.utils.loadEvents()
-
-
-    
     this.login(config.token);
-
-    console.log('LOADED BOT!');
+    console.log(`Logged in as ${config.bot_name}!`);
   }
-
 };

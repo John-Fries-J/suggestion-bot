@@ -16,14 +16,11 @@ module.exports = class Command {
         this.nsfwOnly = options.nsfwOnly || false;
         this.botPermission = options.botPermission || ['SEND_MESSAGES', 'EMBED_LINKS'];
         this.userPermission = options.userPermission  || null;
-        
     }
-
     // eslint-disable-next-line no-unused-vars
     async run(message, args) {
         throw new Error(`The run method has not been implemented in ${this.name}`);
     }
-
     reload() {
         return this.store.load(this.file.path);
     }

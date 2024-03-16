@@ -1,7 +1,10 @@
 {
-  "prefix": "",
+  "prefix": "!", 
   "main_token": "",
-  "developers": [""],
+  "developers": ["630070645874622494"],
   "bot_name":"",
-  "suggestion_channel_id":""
+  "suggestion_channel_id":"",
+  "bot_status":"online",
+  "bot_status_activity":"the suggestions",
+  "bot_status_type":"WATCHING"
 }

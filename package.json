@@ -1,6 +1,6 @@
 {
   "name": "suggestion-bot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple discord.js suggestion bot that doesn't require a database.",
   "main": "index.js",
   "dependencies": {
@@ -21,7 +21,7 @@
     "discord",
     "discord-bot"
   ],
-  "author": "Peter Hanania",
+  "author": "Peter Hanania, John Fries",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/peterhanania/suggestion-bot/issues"

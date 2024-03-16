@@ -25,6 +25,9 @@ If you liked this repository, feel free to leave a star ⭐!
 `suggest :` Suggests a suggestion <br>
 `decline :` Declines a suggestion.<br>
 `approve :` Approves a suggestion.<br>
+`ping :` Gets the ping of the bot.<br>
+`help :` Shows help embed.<br>
+`eval :` Evaluation command.<br>
 
 
 
@@ -43,15 +46,26 @@ npm install
 
 Set up all your information in the *config.json* File as such
 ```
+
 {
   "prefix": "BOT_PREFIX_YOU_WANT",
   "main_token": "YOUR_BOT_TOKEN",
   "developers": ["DEVELOPERS_IDS"],
   "bot_name":"YOUR_BOT_NAME",
   "suggestion_channel_id":"SUGGESTION_CHANNEL_ID"
+  "bot_status":"online",
+  "bot_status_name":"THE_BOTS_STATUS",
+  "bot_status_type":"WATCHING"
 }
 ```
  > You can change the emojis in `emojis.js` and colors in `colors.js`
+ 
+ If you want to change the reaction emojis go to commands/suggestions/suggest.js and edit 
+```
+       s.react(`✅`)
+       s.react(`❌`)
+      ```
+
  
 Once done, you can launch the bot with `node index.js`. 
 

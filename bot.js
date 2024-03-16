@@ -2,7 +2,6 @@ const { Client, Collection } = require("discord.js");
 const Util = require('./structures/Util');
 const config = require('./config.json');
 const token  = config.main_token
-
 module.exports = class botClient extends Client {
 	constructor(options = {}, sentry) {
 	  super({
@@ -28,7 +27,6 @@ module.exports = class botClient extends Client {
         ],
       },
     });
-
     this.validate(options);
     this.partials = ['MESSAGE', 'CHANNEL', 'REACTION', 'GUILD_MEMBER', 'USER'],
     this.commands = new Collection();
@@ -49,6 +47,6 @@ module.exports = class botClient extends Client {
     this.utils.loadCommands()
     this.utils.loadEvents()
     this.login(config.token);
-    console.log(`Logged in as ${config.bot_name}!`);
+    console.log(`Bot Loaded!`);
   }
 };

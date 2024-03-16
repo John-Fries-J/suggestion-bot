@@ -54,7 +54,7 @@ module.exports = class extends Event {
         .setTitle(`${message.client.emoji.fail} Missing Bot Permissions`)
         .setDescription(`Command Name: **${command.name}**\nRequired Permission: **${missingPermissions.map(p => `${p}`).join(' - ')}**`)
         .setTimestamp()
-        .setFooter('https://pogy.xyz')
+        .setFooter('Problems')
         .setColor(message.guild.me.displayHexColor);
       return message.channel.send(embed).catch(()=>{})
           }
@@ -68,7 +68,7 @@ module.exports = class extends Event {
           .setTitle(`${message.client.emoji.fail} Missing User Permissions`)
           .setDescription(`Command Name: **${command.name}**\nRequired Permission: **${missingPermissions.map(p => `${p}`).join('\n')}**`)
           .setTimestamp()
-          .setFooter('https://pogy.xyz')
+          .setFooter('')
           .setColor(message.guild.me.displayHexColor);
        return message.channel.send(embed).catch(()=>{})
       }
@@ -76,7 +76,7 @@ module.exports = class extends Event {
         if (command.ownerOnly) {
           if (!this.client.config.developers.includes(message.author.id)) return
         }
-        if (command.disabled) return message.channel.send(`The owner has disabled the following command for now.`) 
+        if (command.disabled) return message.channel.send(`The owner has disabled the following command for now.`)
         await this.runCommand(message, cmd, args)
         .catch(error => {
            console.log(error)
@@ -87,7 +87,7 @@ module.exports = class extends Event {
       console.log(error)
      return message.channel.send(`An Error has occured, please let the developer know.`)
     }
-  } 
+  }
     async runCommand(message, cmd, args) {
         if (!message.channel.permissionsFor(message.guild.me) || !message.channel.permissionsFor(message.guild.me).has('EMBED_LINKS'))
           return message.channel.send(`${message.client.emoji.fail} Missing bot Permissions - **Embeds Links**`)
@@ -98,7 +98,6 @@ module.exports = class extends Event {
       try {
         const command = this.client.commands.get(cmd.toLowerCase()) || this.client.commands.get(this.client.aliases.get(cmd.toLowerCase()));
         if (message.author.permLevel > 4) return false;
-    
         const cooldown = command.cooldown * 1000
         const ratelimits = this.ratelimits.get(message.author.id) || {}; // get the ENMAP first.
         if (!ratelimits[command.name]) ratelimits[command.name] = Date.now() - cooldown; // see if the command has been run before if not, add the ratelimit

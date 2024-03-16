@@ -14,38 +14,35 @@ module.exports = class extends Command {
       });
     }
     async run(message, args) {
-      // Add a console log to log the command
-      console.log(`Suggestion Sent by ${message.author.tag}`)
-      //Check if the suggestion channel exists or has been given in the config
+      console.log(`Discord Suggestion Ran. From user ${message.author.tag}`)
+      const channelId = `${config.logChannelID}`; 
       let channel;
       if(config.suggestion_channel_id){
         channel = await message.guild.channels.cache.get(config.suggestion_channel_id)
       } else channel = await message.guild.channels.cache.find(c => c.name == "suggestions" && c.type == "text");
-
       if(!channel){
       return message.channel.send(`${message.client.emoji.fail} | I could not find the suggestion channel in the current guild.`)
       };
-      //Check if the suggestion is empty
       const suggestion = args.slice(0).join(" ")
       if(!suggestion){
-        return message.channel.send(`${message.client.emoji.fail} | What would you like to suggest?`)
+        return message.channel.send(`${message.client.emoji.fail} | You need to type !suggest [Your suggestion]`)
       };
-      //Create the suggestion embed
       const embed = new Discord.MessageEmbed()
+      .setThumbnail(message.author.avatarURL())
+      .setDescription(`**Submitter**\n ${message.author.tag} \n\n**Suggestion**\n ${suggestion}`)
+      .setFooter(`Suggested by ${message.author.id}`)
       .setTimestamp()
       .setColor(message.client.color.blue)
       channel.send(embed)
       .then((s)=>{
-      s.react('✅')
-      s.react('❌')
+      s.react(`✅`)
+      s.react(`❌`)
       })
       .catch(()=>{
         return message.reply(`${message.client.emoji.fail} | Could not send a message to the suggestion Channel.`)
       });
       message.delete();
       return message.channel.send(`${message.client.emoji.success} | Successfuly sent your suggestion to ${channel}`)
-      .then((s)=>{
-        s.delete({timeout: 5000})
-      })
       }
 };
+

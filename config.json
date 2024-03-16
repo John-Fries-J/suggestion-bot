@@ -1,10 +1,10 @@
 {
-  "prefix": "!", 
+  "prefix": "", 
   "main_token": "",
-  "developers": ["630070645874622494"],
+  "developers": [""],
   "bot_name":"",
   "suggestion_channel_id":"",
   "bot_status":"online",
-  "bot_status_activity":"the suggestions",
+  "bot_status_name":"",
   "bot_status_type":"WATCHING"
 }

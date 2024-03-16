@@ -12,13 +12,3 @@ bot.emoji = require('./emojis.js');
 
 //start the bot
 bot.start();
-
-
-
-
-
-
-
-
-
-  

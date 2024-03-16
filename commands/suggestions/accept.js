@@ -55,11 +55,11 @@ module.exports = class extends Command {
    
         if(suggestionmessage.embeds[0].title === `Suggestion Approved`){
 
-                 return message.channel.send(new Discord.MessageEmbed().setAuthor(`${message.author.tag}`, message.author.displayAvatarURL({ format: 'png' })).setDescription(`${message.client.emoji.fail} | The following suggestion was already approved`).setFooter('Contact John if this is not the case.').setTimestamp().setColor('RED'));
+                 return message.channel.send(new Discord.MessageEmbed().setAuthor(`${message.author.tag}`, message.author.displayAvatarURL({ format: 'png' })).setDescription(`${message.client.emoji.fail} | The following suggestion was already approved`).setFooter('https://github.com/peterhanania/suggestion-bot').setTimestamp().setColor('RED'));
 
         } else {
 
-                 return message.channel.send(new Discord.MessageEmbed().setAuthor(`${message.author.tag}`, message.author.displayAvatarURL({ format: 'png' })).setDescription(`${message.client.emoji.fail} | The following suggestion was already Declined`).setFooter('Contact John if this is not the case.').setTimestamp().setColor('RED'));
+                 return message.channel.send(new Discord.MessageEmbed().setAuthor(`${message.author.tag}`, message.author.displayAvatarURL({ format: 'png' })).setDescription(`${message.client.emoji.fail} | The following suggestion was already Declined`).setFooter('https://github.com/peterhanania/suggestion-bot').setTimestamp().setColor('RED'));
 
         };
         
@@ -84,4 +84,3 @@ module.exports = class extends Command {
 
       }
 };
-

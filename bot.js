@@ -1,6 +1,7 @@
 const { Client, Collection } = require("discord.js");
 const Util = require('./structures/Util');
-//const config = require('./config.json');
+const config = require('./config.json');
+const token  = config.main_token
 
 module.exports = class botClient extends Client {
 	constructor(options = {}, sentry) {
@@ -37,7 +38,7 @@ module.exports = class botClient extends Client {
     this.config = require('./config.json');
   }
   
-  /*validate(options) {
+  validate(options) {
     if (typeof options !== 'object') throw new TypeError('Options should be a type of Object.');
 
     if (!token) throw new Error('You must pass the token for the client.');
@@ -48,14 +49,14 @@ module.exports = class botClient extends Client {
     this.prefix = options.prefix;
 
   }
-*/
+
   async start(token = this.token) {
     this.utils.loadCommands()
     this.utils.loadEvents()
 
 
     
-    this.login(process.env.TOKEN);
+    this.login(config.token);
 
     console.log('LOADED BOT!');
   }

@@ -7,10 +7,6 @@ module.exports = class extends Event {
   async run(guild) {
   
     console.log(`--| I just joined ${guild.name} |--`)
-
-
-    
-
     
   }
 };

@@ -46,7 +46,6 @@ npm install
 
 Set up all your information in the *config.json* File as such
 ```
-
 {
   "prefix": "BOT_PREFIX_YOU_WANT",
   "main_token": "YOUR_BOT_TOKEN",
@@ -61,7 +60,8 @@ Set up all your information in the *config.json* File as such
  > You can change the emojis in `emojis.js` and colors in `colors.js`
  
  If you want to change the reaction emojis go to commands/suggestions/suggest.js and edit 
-```
+
+      ```
        s.react(`✅`)
        s.react(`❌`)
       ```

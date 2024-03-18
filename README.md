@@ -70,3 +70,8 @@ Set up all your information in the *config.json* File as such
 Once done, you can launch the bot with `node index.js`. 
 
 Any questions? DM me on <a href="https://discord.com/users/710465231779790849">Discord</a>.
+
+## Authors
+
+* **peterhanania** - *Developer* - [peterhanania](https://github.com/peterhanania/) - *Created the original bot code ([Link to code](https://github.com/peterhanania/suggestion-bot)*
+* **John Fries** - *Developer* - [John Fries](https://github.com/John-Fries-J/) - *Updated to fix*
